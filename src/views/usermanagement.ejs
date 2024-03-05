@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List</title>
+  </head>
+  <style>
+    table tbody tr {
+      padding: 20px;
+      border: 1px solid black;
+    }
+    table tbody td {
+      padding: 20px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <h1>LIST USERS</h1>
+    <table style="border: 1px solid black">
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Actions</th>
+      </tr>
+      <% listUsers.forEach(function(listUsers) { %>
+      <tr>
+        <td><%= listUsers.id %></td>
+        <td><%= listUsers.email %></td>
+        <td><%= listUsers.name %></td>
+        <td><%= listUsers.city %></td>
+        <td>
+          <a href="/update/<%= listUsers.id %>">Edit</a>
+          <a href="/delete/<%= listUsers.id %>">Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
